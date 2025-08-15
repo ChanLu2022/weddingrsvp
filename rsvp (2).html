@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsu & Aung - Our Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration for Champagne theme */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#4A3C38', /* Espresso Brown */
+                        'accent-gold': '#C9B6A1', /* Champagne Gold */
+                        'light-cream': '#F4EBD9', /* Warm Cream */
+                        'soft-gray': '#D4D4CE', /* Warm Gray */
+                    },
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-bg': "url('https://images.unsplash.com/photo-1549727453-39f28c2e8111?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjYyNTJ8MHwxfHNlYXJjaHwxNXx8bHV4dXJ5JTIwd2VkZGluZyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzA4NjgyMTk4fDA&ixlib=rb-4.0.3&q=80&w=1920')",
+                    }
+                }
+            }
+        }
+
+        /* Additional custom styles for elegance */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #4A3C38; /* Espresso brown for text */
+        }
+        .form-input {
+            @apply w-full p-3 mb-4 border border-soft-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-gold transition duration-300 ease-in-out;
+        }
+        .btn-submit {
+            @apply w-full py-3 px-6 bg-accent-gold text-primary-dark font-display font-bold text-lg rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105;
+        }
+        .hero-section {
+            background-image: var(--bg-image); /* Use CSS variable for dynamic background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        .section-heading {
+            @apply font-display text-4xl md:text-5xl text-center mb-8 md:mb-12 text-accent-gold;
+        }
+    </style>
+</head>
+<body class="bg-light-cream">
+
+    <header class="bg-white shadow-lg fixed w-full z-50 top-0">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#hero" class="mb-4 md:mb-0">
+                <img src="/local/wedding/signature.jpg" alt="Hsu & Aung" class="h-10 inline-block align-middle">
+            </a>
+            <ul class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-primary-dark text-lg font-sans">
+                <li><a href="#our-story" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Our Story</a></li>
+                <li><a href="#gallery" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Gallery</a></li>
+                <li><a href="#wedding-details" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Details</a></li>
+                <li><a href="#rsvp" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">RSVP</a></li>
+                <li><a href="#registry" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Registry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mt-20"> <section id="hero" class="min-h-screen flex items-center justify-center text-center text-primary-dark p-8 relative bg-light-cream">
+            <div class="z-10 max-w-4xl mx-auto">
+                <p class="font-display text-2xl md:text-3xl mb-4 tracking-wide">The Honour of Your Presence</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                    Hsu & Aung
+                </h1>
+                <p class="font-sans text-xl md:text-2xl tracking-wider">
+                    Are United in Marriage
+                </p>
+                <p class="font-display text-xl md:text-3xl mt-6 tracking-wider font-bold">
+                    Saturday, October 26, 2025
+                </p>
+                <p class="font-sans text-lg md:text-xl mt-2">
+                    The Crystal Ballroom, Lotte
+                </p>
+            </div>
+        </section>
+
+        <section id="our-story" class="py-16 px-4 md:px-8 bg-light-cream text-primary-dark">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="section-heading">Our Story</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <img src="/local/wedding/handinhand.png" alt="Couple walking hand in hand" class="w-full h-auto rounded-xl shadow-lg border border-soft-gray">
+                    </div>
+                    <div class="md:order-1 text-center md:text-left">
+                        <h3 class="font-display text-3xl font-bold mb-4 text-primary-dark">The Beginning</h3>
+                        <p class="font-sans text-lg leading-relaxed mb-6">
+                            It all started on a serendipitous evening at a local cafe. Hsu, deep in a book, and Aung, trying (and failing) to master latte art, had a chance encounter that sparked a connection neither expected. Their shared love for obscure indie films and late-night talks made it clear: this was more than just a coincidence.
+                        </p>
+                        <h3 class="font-display text-3xl font-bold mb-4 text-primary-dark">The Journey</h3>
+                        <p class="font-sans text-lg leading-relaxed">
+                            Through countless adventures, quiet evenings, and navigating life's ups and downs, their bond only grew stronger. From hiking in the Dolomites to cooking elaborate (and sometimes disastrous) meals, every moment has been a testament to their unwavering commitment and joy in each other's company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-16 px-4 md:px-8 bg-white text-primary-dark">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="section-heading">Our Favorite Moments</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/mountaintop.png" alt="Couple embracing on a mountain top" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Engagement Bliss</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/landscape.png" alt="Couple traveling in a scenic landscape" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Travel Adventures</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/laughing.png" alt="Candid shot of a couple laughing" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Candid Moments</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/dinner.png" alt="Couple at a elegant dinner" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Cherished Memories</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/champagne.png" alt="Couple celebrating with champagne" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Celebration</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-soft-gray">
+                        <img src="/local/wedding/eyes.png" alt="Couple looking into each other's eyes" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-display text-center">Simply Us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wedding-details" class="py-16 px-4 md:px-8 bg-light-cream text-primary-dark">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="section-heading">Wedding Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
+                    <div class="p-6 bg-white rounded-xl shadow-lg border border-soft-gray">
+                        <h3 class="font-display text-3xl font-bold mb-4 text-accent-gold">Ceremony & Reception</h3>
+                        <p class="font-sans text-lg mb-2">Saturday, October 26, 2025</p>
+                        <p class="font-sans text-lg mb-2">5:00 PM - Ceremony</p>
+                        <p class="font-sans text-lg mb-4">6:00 PM - Cocktail Hour & Reception to Follow</p>
+                        <p class="font-sans text-lg font-bold">The Crystal Ballroom, Lotte Hotel</p>
+                        <p class="font-sans text-md">2 Pyay Road, Yangon</p>
+                        <a href="https://maps.google.com/?q=The+Grand+Ballroom,+City+Centre" target="_blank" class="text-accent-gold hover:underline mt-4 inline-block">View on Map</a>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-lg border border-soft-gray">
+                        <h3 class="font-display text-3xl font-bold mb-4 text-accent-gold">Dress Code & Gifts</h3>
+                        <p class="font-sans text-lg mb-4">
+                            **Dress Code:** Black Tie Optional. We'd love to see you in your most elegant attire!
+                        </p>
+                        <p class="font-sans text-lg mb-4">
+                            **Children:** While we love your little ones, this will be an adults-only celebration.
+                        </p>
+                        <p class="font-sans text-lg">
+                            **Gifts:** Your presence is truly the only gift we need. However, if you wish to honor us with a gift, a contribution towards our future home or honeymoon fund would be greatly appreciated. Details can be found in our registry section.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp" class="py-16 px-4 md:px-8 bg-white text-primary-dark">
+            <div class="max-w-xl mx-auto bg-light-cream rounded-xl shadow-2xl p-8 md:p-12 border border-soft-gray">
+                <h2 class="section-heading">Kindly RSVP</h2>
+                <form id="rsvpForm" class="space-y-6">
+                    <div>
+                        <label for="fullName" class="block text-lg font-sans font-medium mb-2">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required class="form-input">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-lg font-sans font-medium mb-2">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email" class="form-input">
+                    </div>
+
+                    <div>
+                        <label class="block text-lg font-sans font-medium mb-2">Will you be attending?</label>
+                        <div class="flex items-center space-x-6">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attending" value="yes" class="form-radio h-5 w-5 text-accent-gold" checked>
+                                <span class="ml-2 text-lg">Joyfully Yes!</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="attending" value="no" class="form-radio h-5 w-5 text-accent-gold">
+                                <span class="ml-2 text-lg">Regrettably No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="guestCountContainer">
+                        <label for="guestCount" class="block text-lg font-sans font-medium mb-2">Number of Guests (including yourself)</label>
+                        <select id="guestCount" name="guestCount" class="form-input">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="dietaryRestrictions" class="block text-lg font-sans font-medium mb-2">Dietary Restrictions / Allergies (Optional)</label>
+                        <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="3" class="form-input" placeholder="e.g., Vegetarian, Gluten-free, Nut allergy"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-lg font-sans font-medium mb-2">A Special Message (Optional)</label>
+                        <textarea id="message" name="message" rows="4" class="form-input" placeholder="e.g., Wishing you a lifetime of happiness!"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Send RSVP
+                    </button>
+
+                    <div id="confirmationMessage" class="hidden mt-8 p-6 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center font-sans">
+                        <p class="font-bold text-xl mb-2">Thank You!</p>
+                        <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="registry" class="py-16 px-4 md:px-8 bg-light-cream text-primary-dark">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="section-heading">Gift Registry</h2>
+                <p class="font-sans text-lg leading-relaxed mb-8">
+                    Your love and support are the greatest gifts of all. Should you wish to honor us with a present, we've set up a registry to help us start our new life together.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <a href="https://example.com/honeymoon-fund" target="_blank" class="py-3 px-8 bg-accent-gold text-primary-dark font-display font-bold text-lg rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
+                        Honeymoon Fund
+                    </a>
+                    <a href="https://example.com/our-home-fund" target="_blank" class="py-3 px-8 bg-accent-gold text-primary-dark font-display font-bold text-lg rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
+                        Our Home Fund
+                    </a>
+                </div>
+                <p class="font-sans text-md mt-8">Thank you for your generosity and kindness!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-dark text-light-cream py-8 text-center text-sm font-sans">
+        <p>© 2025 Hsu & Aung. All Rights Reserved.</p>
+        <p class="mt-2">Created with Love.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rsvpForm = document.getElementById('rsvpForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const attendingRadios = document.querySelectorAll('input[name="attending"]');
+            const guestCountContainer = document.getElementById('guestCountContainer');
+
+            // Handle visibility of guest count based on attendance
+            attendingRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'yes') {
+                        guestCountContainer.classList.remove('hidden');
+                    } else {
+                        guestCountContainer.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Initial check for guest count visibility
+            if (document.querySelector('input[name="attending"]:checked').value === 'no') {
+                guestCountContainer.classList.add('hidden');
+            }
+
+
+            rsvpForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // In a real application, you would send this data to a server
+                // For this sample, we just show a confirmation message.
+                const formData = new FormData(rsvpForm);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+
+                console.log('RSVP Data:', data); // Log data to console for demonstration
+
+                // Hide the form and show the confirmation message
+                rsvpForm.classList.add('hidden');
+                confirmationMessage.classList.remove('hidden');
+
+                // Optionally, you could reset the form or redirect after a delay
+                // setTimeout(() => {
+                //     rsvpForm.reset();
+                //     rsvpForm.classList.remove('hidden');
+                //     confirmationMessage.classList.add('hidden');
+                // }, 5000); // Hide message after 5 seconds
+            });
+        });
+    </script>
+</body>
+</html>

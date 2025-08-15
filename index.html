@@ -62,7 +62,7 @@
                 <li><a href="#gallery" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Gallery</a></li>
                 <li><a href="#wedding-details" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Details</a></li>
                 <li><a href="#rsvp" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">RSVP</a></li>
-                <li><a href="#rsvp-dashboard" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Dashboard</a></li>
+                <li><a href="dashboard.html" class="hover:text-accent-gold transition duration-300 rounded-lg p-2">Dashboard</a></li>
             </ul>
         </nav>
     </header>
@@ -241,43 +241,6 @@
             </div>
         </section>
 
-        <section id="rsvp-dashboard" class="py-16 px-4 md:px-8 bg-light-cream text-primary-dark">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="section-heading">RSVP Dashboard (Host View)</h2>
-                <div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-soft-gray">
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full divide-y divide-soft-gray">
-                            <thead class="bg-primary-dark">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-light-cream uppercase tracking-wider">Full Name</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-light-cream uppercase tracking-wider">Attending</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-light-cream uppercase tracking-wider">Guests</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-light-cream uppercase tracking-wider">Dietary Restrictions</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-light-cream uppercase tracking-wider">Message</th>
-                                </tr>
-                            </thead>
-                            <tbody id="rsvpTableBody" class="bg-white divide-y divide-soft-gray">
-                                <tr class="hover:bg-light-cream transition duration-200">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-dark">Thadar Swe</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">Joyfully Yes!</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">2</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">Vegetarian</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">Can't wait to celebrate with you!</td>
-                                </tr>
-                                <tr class="hover:bg-light-cream transition duration-200">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-dark">Min Aung</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">Joyfully Yes!</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">1</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">None</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">See you both there!</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class="bg-primary-dark text-light-cream py-8 text-center text-sm font-sans">
@@ -291,9 +254,7 @@
             const confirmationMessage = document.getElementById('confirmationMessage');
             const attendingRadios = document.querySelectorAll('input[name="attending"]');
             const guestCountContainer = document.getElementById('guestCountContainer');
-            const rsvpTableBody = document.getElementById('rsvpTableBody');
-
-            // Handle visibility of guest count based on attendance
+            
             attendingRadios.forEach(radio => {
                 radio.addEventListener('change', function() {
                     if (this.value === 'yes') {
@@ -304,40 +265,19 @@
                 });
             });
 
-            // Initial check for guest count visibility
             if (document.querySelector('input[name="attending"]:checked').value === 'no') {
                 guestCountContainer.classList.add('hidden');
             }
 
 
             rsvpForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
+                event.preventDefault();
 
                 const formData = new FormData(rsvpForm);
-                const data = {};
-                for (let [key, value] of formData.entries()) {
-                    data[key] = value;
-                }
-
-                console.log('RSVP Data:', data); // Log data to console for demonstration
-
-                // Create a new table row and populate it with the submitted data
-                const newRow = document.createElement('tr');
-                newRow.className = 'hover:bg-light-cream transition duration-200';
-                newRow.innerHTML = `
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary-dark">${data.fullName}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">${data.attending === 'yes' ? 'Joyfully Yes!' : 'Regrettably No'}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">${data.attending === 'yes' ? data.guestCount : '0'}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">${data.dietaryRestrictions || 'None'}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-dark">${data.message || 'None'}</td>
-                `;
-
-                // Add the new row to the top of the table
-                rsvpTableBody.prepend(newRow);
-
-                // Hide the form and show the confirmation message
-                rsvpForm.classList.add('hidden');
-                confirmationMessage.classList.remove('hidden');
+                const data = new URLSearchParams(formData).toString();
+                
+                // Redirect to the dashboard page with form data in the URL
+                window.location.href = `dashboard.html?${data}`;
             });
         });
     </script>
